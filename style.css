@@ -1,11 +1,32 @@
+:root {
+  --cor-primaria: #d45004;
+  --cor-primaria-escura: #792e02;
+  --fundo-1: #f7f7f7;
+  --fundo-2: #ffffff;
+  --texto: #000000;
+  --subtitulo: rgba(0, 0, 0, 0.2);
+  --onda: url("./img/onda-clara.svg");
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --fundo-1: #111;
+    --fundo-2: #000;
+    --texto: #ffffff;
+    --subtitulo: rgba(255, 255, 255, 0.2);
+    --onda: url("./img/onda-escura.svg");
+  }
+}
+
 body {
   font-family: arial;
   margin: 0px;
-  background: #f7f7f7;
+  background: var(--fundo-1);
   display: grid;
   gap: 60px;
   justify-items: center;
   margin-top: 60px;
+  color: var(--texto);
 }
 
 img {
@@ -50,17 +71,18 @@ p {
 
 .menu a {
   display: block;
-  background: rgb(7, 7, 7);
+  background: var(--fundo-2);
   padding: 1rem 2rem;
   border-radius: 30px;
   border-style: solid;
   border-color: black;
-  color: rgb(255, 254, 254);
+  color: var(--fundo-2);
   border: 5px double transparent;
+  color: var(--texto);
 }
 
 .menu a:hover {
-  border-color: #d45004;
+  border-color: var(--cor-primaria);
 }
 
 .conteudo {
@@ -70,7 +92,7 @@ p {
 }
 
 .introducao {
-  background: #fff;
+  background: var(--fundo-2);
   padding: 40px;
   text-align: right;
   position: relative;
@@ -87,7 +109,7 @@ p {
   content: "";
   width: 60px;
   height: 4px;
-  background: #d45004;
+  background: var(--cor-primaria);
   position: absolute;
   top: 30px;
   right: -30px;
@@ -99,33 +121,33 @@ p {
 }
 
 .botao {
-  background: #d45004;
+  background: var(--cor-primaria);
   border-radius: 10px;
   padding: 1rem 2rem;
-  color: #ffffff;
+  color: var(--fundo-1);
   display: flex;
   border: 3px solid;
 }
 
 .botao:hover {
-  border-color: black;
-  background-color: #792e02;
+  border-color: var(--texto);
+  background-color: var(--cor-primaria-escura);
 }
 
 .subtitulo {
   font-size: 4rem;
   text-transform: uppercase;
-  color: rgba(0, 0, 0, 0.2);
+  color: var(--subtitulo);
   text-align: right;
   padding: 40px;
   align-self: center;
-  background-image: url("./img/onda.svg");
+  background-image: var(--onda);
   /* função abaixo quebra o texto assim que ele encolhe */
   word-break: break-all;
 }
 
 .vantagens {
-  background: #fff;
+  background: var(--fundo-2);
   padding: 40px;
 }
 
@@ -139,7 +161,7 @@ p {
 }
 
 .vantagens-item:hover {
-  border-left: 3px solid #e63205;
+  border-left: 3px solid var(--fundo-1);
 }
 
 .vantagens-item p {
@@ -147,7 +169,7 @@ p {
 }
 
 .rodape {
-  background: rgb(255, 255, 255);
+  background: var(--fundo-2);
   width: 100%;
   text-align: center;
   padding: 40px;
